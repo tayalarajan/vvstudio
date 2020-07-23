@@ -27,7 +27,7 @@ router.get('/payment', (req, res)=>{
     params['ORDER_ID'] = 'ORD' + today.getDate() + today.getHours() + today.getMinutes( )+ today.getSeconds(),
     params['CUST_ID'] = 'CUST' + today.getDate() + today.getHours() + today.getMinutes( )+ today.getSeconds(),
     params['TXN_AMOUNT'] = '100',
-    params['CALLBACK_URL'] = process.env.PORT+'/check',
+    params['CALLBACK_URL'] = 'https://vvstudio.herokuapp.com/check',
     params['EMAIL'] = 'test@gmail.com',
     params['MOBILE_NO'] = '8489797055'
 
