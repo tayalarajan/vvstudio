@@ -634,7 +634,7 @@ h1, h2, h3, h4, h5,
         margin-top: 200px; } }
     @media (max-width: 991.98px) {
       .intro-section, .intro-section .container > .row{
-        min-height: 1200px;
+        min-height: 1700px;
       }
     }
   .intro-section p {
