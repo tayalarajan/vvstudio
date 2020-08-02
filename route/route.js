@@ -1,11 +1,23 @@
 var router = require('express').Router()
+var fire = require('./fire')
 var bodyParser = require('body-parser')
+var db = fire.firestore()
 router.use(bodyParser.json())
 const checksum_lib = require('./checksum')
 var today = new Date()
 const port = 3000
 
-router.post("/check", function (req, res) {
+
+router.post("/check", async function (req, res) {
+    await db.collection('appointment').add({
+        name: req.body.name,
+        email: req.body.email,
+        mobilenumber: req.body.mobilenumber,
+        service: req.body.service,
+        payment: req.body.payment,
+        date: req.body.date,
+        timestamp: new Date(),
+    });
     if(req.body.payment=="Pay later"){
         res.render("success.ejs");
     }
